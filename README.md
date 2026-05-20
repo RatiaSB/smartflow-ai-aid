@@ -84,7 +84,7 @@ The **SmartOffice AI SME Assistant** solves this by providing an AI-powered assi
 
 - React.js – Frontend framework  
 - Tailwind CSS – UI styling and responsiveness  
-- OpenAI API / ChatGPT – AI content generation  
+- ChatGPT – AI content generation  
 - Lovable AI – Rapid UI prototyping  
 - GitHub – Version control and collaboration  
 - Vercel – Deployment platform  
