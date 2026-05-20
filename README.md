@@ -1,148 +1,121 @@
 # SmartOffice AI SME Assistant
 
-## Project Overview
+## 🧠 Project Overview
 
-In today’s digital economy, organizations are rapidly adopting Artificial Intelligence to improve efficiency, automate repetitive tasks, and enhance decision-making. This project challenges the development of an AI-powered Productivity Assistant that solves real-world workplace problems using modern AI tools.
+In today’s digital economy, organizations are rapidly adopting Artificial Intelligence to improve efficiency, automate repetitive tasks, and enhance decision-making. 
 
-The solution demonstrates the ability to apply AI effectively, design high-quality prompts, and use AI responsibly — all critical skills required in today’s job market.
+The SmartOffice AI SME Assistant is an AI-powered productivity platform designed to help non-technical workplace users automate daily administrative tasks such as writing emails, summarizing meetings, planning schedules, and conducting research.
+
+The system demonstrates the practical application of AI, strong prompt engineering, and responsible AI usage in a real-world workplace environment.
+
+This project is developed as part of the CAPACITI AI Skill Accelerator Programme.
 
 ---
 
-## Project Objective
+## 🎯 Project Objective
 
-The objective of this project is to build a practical AI solution that enhances workplace productivity by automating common administrative and professional tasks.
+The objective of this project is to develop a practical AI solution that improves workplace productivity by automating common tasks.
 
 The solution must:
 
-- Address a real-world business or professional use case
-- Utilize AI tools effectively (e.g., ChatGPT, Lovable AI)
-- Demonstrate strong prompt engineering techniques
-- Apply ethical and responsible AI practices
-- Clearly show productivity improvement and value in workplace environments
+- Address real-world workplace challenges
+- Use AI tools effectively (e.g., ChatGPT / Lovable AI)
+- Apply strong prompt engineering techniques
+- Demonstrate ethical and responsible AI usage
+- Deliver measurable productivity improvements for users
 
 ---
 
-## Problem Statement
+## 🚨 Problem Statement
 
-Professionals across various industries spend significant time on repetitive tasks such as:
+Employees in offices and small businesses spend significant time performing repetitive tasks such as:
 
-- Drafting emails
+- Writing professional emails
 - Summarizing meeting notes
-- Planning schedules
+- Planning daily and weekly schedules
 - Conducting research
-- Managing daily communication tasks
+- Managing communication tasks
 
-These manual processes reduce productivity and efficiency.
+These manual processes reduce efficiency and productivity in modern workplaces.
 
-This project aims to solve this challenge by creating an AI-driven assistant that simplifies and automates these workplace tasks, enabling users to focus on higher-value work.
-
----
-
-## Proposed Solution
-
-SmartOffice AI SME Assistant is a modern AI-powered web application designed for non-technical workplace users such as:
-
-- Office administrators
-- HR personnel
-- Receptionists
-- Small business owners
-- Retail supervisors
-
-The platform provides an intuitive dashboard where users can access multiple AI tools to automate daily tasks.
+SmartOffice AI SME Assistant solves this problem by providing an AI-powered assistant that automates and simplifies these tasks through a single unified platform.
 
 ---
 
-## Core Features
+## ⚙️ Features
 
 ### 1. Smart Email Generator
-- Generates professional workplace emails
+- Generates professional emails instantly
 - Supports tone selection (formal, friendly, persuasive)
-- Allows audience targeting (client, manager, team)
+- Adapts messages based on audience (client, manager, team)
+- Editable AI output before sending
+
+---
 
 ### 2. Meeting Notes Summarizer
 - Converts long meeting notes into structured summaries
-- Extracts action items, decisions, and deadlines
-- Highlights key responsibilities
+- Extracts key points, action items, and deadlines
+- Highlights responsibilities and decisions
+
+---
 
 ### 3. AI Task Planner / Scheduler
 - Generates daily and weekly task schedules
 - Prioritizes tasks based on urgency and importance
 - Suggests productivity improvements
 
+---
+
 ### 4. AI Research Assistant
-- Summarizes articles, reports, and workplace content
-- Provides insights and recommendations
-- Simplifies complex information
+- Summarizes articles, documents, and reports
+- Provides key insights and recommendations
+- Simplifies complex workplace information
+
+---
 
 ### 5. AI Workplace Chat Assistant
-- Interactive chat-based AI assistant
-- Supports continuous conversation
-- Helps with workplace queries, writing, and planning tasks
+- Interactive conversational AI interface
+- Supports continuous workplace discussions
+- Assists with writing, planning, and decision support
 
 ---
 
-## Technology Stack
+## 🧰 Tools Used
 
-- React.js (Frontend)
-- Tailwind CSS (Styling)
-- OpenAI API / ChatGPT (AI Engine)
-- Lovable AI (Prototyping Tool)
-- GitHub (Version Control)
-- Vercel (Deployment)
+- React.js – Frontend framework
+- Tailwind CSS – UI styling and responsiveness
+- OpenAI API / ChatGPT – AI content generation
+- Lovable AI – Rapid prototyping and UI generation
+- GitHub – Version control and collaboration
+- Vercel – Deployment platform
 
 ---
 
-## UI/UX Design
+## 🖥️ UI / UX Design
 
-- Modern SaaS dashboard interface
+- Modern SaaS-style dashboard interface
 - Mobile-first responsive design
 - Sidebar navigation system
-- Clean and minimal Chinese-tech inspired UI
-- Inspired by enterprise platforms such as WeChat Work and Alibaba productivity tools
+- Clean and minimal Chinese-tech inspired design
+- Inspired by enterprise platforms such as:
+  - WeChat Work
+  - Alibaba productivity systems
+  - Huawei enterprise dashboards
 - Smooth animations and card-based layouts
 
 ---
 
-## Responsible AI
+## 🚀 Setup Instructions
 
-This application includes ethical AI usage principles:
+### 1. Clone the Repository
+```bash
+git clone https://github.com/your-username/smartoffice-ai-sme-assistant.git
 
-- AI-generated outputs may contain inaccuracies
-- Users should verify important workplace decisions
-- The system avoids biased or harmful content
-- Encourages human oversight for critical tasks
-
----
-
-## Expected Impact
-
-The SmartOffice AI SME Assistant improves workplace efficiency by:
-
-- Reducing time spent on repetitive tasks
-- Improving communication quality
-- Enhancing decision-making speed
-- Increasing productivity in SMEs and offices
-- Supporting digital transformation in workplaces
-
----
-
-## Author
-
-Swatsi Ratia  
-CAPACITI AI Skill Accelerator Programme  
-
----
-
-## Future Improvements
-
-- Voice-to-text AI input
-- Multi-language support (English, Chinese, isiXhosa)
-- WhatsApp integration for chatbot
-- Cloud storage for saved outputs
-- Mobile application version (Android/iOS)
-
----
-
-## License
-
-This project is developed for educational and demonstration purposes as part of the CAPACITI AI Skill Accelerator Programme.
+2. Navigate into the Project
+cd smartoffice-ai-sme-assistant
+3. Install Dependencies
+npm install
+4. Start Development Server
+npm run dev
+5. Open in Browser
+http://localhost:5173
