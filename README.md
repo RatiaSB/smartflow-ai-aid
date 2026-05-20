@@ -122,3 +122,18 @@ npm run dev
 
 # 5. Open in browser
 http://localhost:5173
+
+```
+
+---
+
+## 👨‍💻 Author
+
+### Swatsi Ratia  
+CAPACITI AI Skill Accelerator Programme
+
+---
+
+## 📌 License
+
+This project is developed for educational and demonstration purposes.
