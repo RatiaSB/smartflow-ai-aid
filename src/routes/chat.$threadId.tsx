@@ -6,7 +6,6 @@ import { threadStore } from "@/lib/thread-store";
 import {
   Conversation,
   ConversationContent,
-  ConversationEmptyState,
   ConversationScrollButton,
 } from "@/components/ai-elements/conversation";
 import { Message, MessageContent, MessageResponse } from "@/components/ai-elements/message";
@@ -87,12 +86,15 @@ function ChatThreadPage() {
       <Conversation className="flex-1">
         <ConversationContent className="max-w-3xl mx-auto w-full px-4 py-6">
           {messages.length === 0 ? (
-            <ConversationEmptyState
-              icon={<img src={logo} alt="" className="h-12 w-12" />}
-              title="How can I help you today?"
-              description="Ask anything about workplace tasks — drafting emails, planning your day, summarising info."
-            >
-              <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-2 w-full max-w-xl">
+            <div className="flex flex-col items-center justify-center text-center py-16 gap-4">
+              <img src={logo} alt="" className="h-14 w-14" />
+              <div>
+                <h3 className="text-xl font-semibold tracking-tight">How can I help you today?</h3>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  Ask anything about workplace tasks — drafting emails, planning your day, summarising info.
+                </p>
+              </div>
+              <div className="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-2 w-full max-w-xl">
                 {SUGGESTIONS.map((s) => (
                   <button
                     key={s}
@@ -103,7 +105,7 @@ function ChatThreadPage() {
                   </button>
                 ))}
               </div>
-            </ConversationEmptyState>
+            </div>
           ) : (
             messages.map((m) => (
               <Message key={m.id} from={m.role === "user" ? "user" : "assistant"}>
