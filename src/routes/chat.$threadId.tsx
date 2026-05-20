@@ -160,7 +160,6 @@ function ChatThreadPage() {
             }}
           >
             <PromptInputTextarea
-              ref={taRef}
               placeholder="Message SmartOffice AI…"
             />
             <PromptInputFooter className="justify-between">
