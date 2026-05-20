@@ -1,7 +1,7 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useChat } from "@ai-sdk/react";
 import { DefaultChatTransport, type UIMessage } from "ai";
-import { useEffect, useMemo, useRef } from "react";
+import { useEffect, useMemo } from "react";
 import { threadStore } from "@/lib/thread-store";
 import {
   Conversation,
@@ -73,10 +73,12 @@ function ChatThreadPage() {
     threadStore.upsert(threadId, { messages, title });
   }, [messages, threadId]);
 
-  // Keep textarea focused.
-  const taRef = useRef<HTMLTextAreaElement | null>(null);
+  // Auto-focus textarea on thread change and after streaming.
   useEffect(() => {
-    taRef.current?.focus();
+    const ta = document.querySelector<HTMLTextAreaElement>(
+      'textarea[data-prompt-input="true"], form[data-slot="prompt-input"] textarea, textarea',
+    );
+    ta?.focus();
   }, [threadId, status]);
 
   const isLoading = status === "submitted" || status === "streaming";
