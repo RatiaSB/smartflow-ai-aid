@@ -15,6 +15,7 @@ import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { useTheme } from "@/lib/theme";
 import logo from "@/assets/logo.png";
+import { SidebarQR } from "@/components/SidebarQR";
 
 const NAV = [
   { to: "/", label: "Dashboard", icon: LayoutDashboard },
