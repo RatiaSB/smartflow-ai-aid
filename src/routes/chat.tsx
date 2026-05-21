@@ -16,11 +16,12 @@ export const Route = createFileRoute("/chat")({
   component: ChatLayout,
 });
 
+const EMPTY_THREADS: ReturnType<typeof threadStore.list> = [];
 function useThreads() {
   return useSyncExternalStore(
     (cb) => threadStore.subscribe(cb),
     () => threadStore.list(),
-    () => [],
+    () => EMPTY_THREADS,
   );
 }
 
