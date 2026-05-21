@@ -11,6 +11,7 @@ import {
   Users,
 } from "lucide-react";
 import { AiDisclaimer } from "@/components/AiDisclaimer";
+import { MobileQR } from "@/components/MobileQR";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -119,6 +120,8 @@ function Dashboard() {
           })}
         </div>
       </section>
+
+      <MobileQR />
 
       <AiDisclaimer />
     </div>
