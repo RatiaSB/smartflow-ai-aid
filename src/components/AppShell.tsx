@@ -64,11 +64,11 @@ export function AppShell({ children }: { children: React.ReactNode }) {
         {/* Sidebar */}
         <aside
           className={cn(
-            "fixed md:sticky top-0 z-40 md:z-10 h-screen w-72 shrink-0 border-r border-sidebar-border bg-sidebar text-sidebar-foreground transition-transform md:translate-x-0",
+            "fixed md:sticky top-0 z-40 md:z-10 h-screen w-72 shrink-0 border-r border-sidebar-border bg-sidebar text-sidebar-foreground transition-transform md:translate-x-0 flex flex-col",
             mobileOpen ? "translate-x-0" : "-translate-x-full",
           )}
         >
-          <div className="hidden md:flex items-center gap-2 px-5 h-16 border-b border-sidebar-border">
+          <div className="hidden md:flex items-center gap-2 px-5 h-16 border-b border-sidebar-border shrink-0">
             <img src={logo} alt="" className="h-8 w-8" />
             <div className="leading-tight">
               <div className="font-semibold tracking-tight">SmartOffice<span className="text-accent">.</span>AI</div>
@@ -76,33 +76,37 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             </div>
           </div>
 
-          <nav className="p-3 space-y-1">
-            <div className="px-3 pt-2 pb-1 text-[10px] font-medium uppercase tracking-[0.18em] text-muted-foreground">
-              Workspace
-            </div>
-            {NAV.map((item) => {
-              const Icon = item.icon;
-              const active = isActive(item.to);
-              return (
-                <Link
-                  key={item.to}
-                  to={item.to}
-                  onClick={() => setMobileOpen(false)}
-                  className={cn(
-                    "flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm transition-colors",
-                    active
-                      ? "bg-primary text-primary-foreground shadow-sm"
-                      : "hover:bg-sidebar-accent hover:text-sidebar-accent-foreground",
-                  )}
-                >
-                  <Icon className={cn("h-4 w-4", active ? "" : "text-muted-foreground")} />
-                  <span className="font-medium">{item.label}</span>
-                </Link>
-              );
-            })}
-          </nav>
+          <div className="flex-1 min-h-0 overflow-y-auto">
+            <nav className="p-3 space-y-1">
+              <div className="px-3 pt-2 pb-1 text-[10px] font-medium uppercase tracking-[0.18em] text-muted-foreground">
+                Workspace
+              </div>
+              {NAV.map((item) => {
+                const Icon = item.icon;
+                const active = isActive(item.to);
+                return (
+                  <Link
+                    key={item.to}
+                    to={item.to}
+                    onClick={() => setMobileOpen(false)}
+                    className={cn(
+                      "flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm transition-colors",
+                      active
+                        ? "bg-primary text-primary-foreground shadow-sm"
+                        : "hover:bg-sidebar-accent hover:text-sidebar-accent-foreground",
+                    )}
+                  >
+                    <Icon className={cn("h-4 w-4", active ? "" : "text-muted-foreground")} />
+                    <span className="font-medium">{item.label}</span>
+                  </Link>
+                );
+              })}
+            </nav>
 
-          <div className="absolute bottom-0 inset-x-0 p-3 border-t border-sidebar-border">
+            <SidebarQR />
+          </div>
+
+          <div className="shrink-0 p-3 border-t border-sidebar-border">
             <button
               onClick={toggle}
               className="hidden md:flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-sm hover:bg-sidebar-accent"
