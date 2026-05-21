@@ -13,11 +13,19 @@ type Listener = () => void;
 const threads = new Map<string, Thread>();
 const listeners = new Set<Listener>();
 
-const emit = () => listeners.forEach((l) => l());
+let cachedList: Thread[] = [];
+const recomputeList = () => {
+  cachedList = Array.from(threads.values()).sort((a, b) => b.createdAt - a.createdAt);
+};
+
+const emit = () => {
+  recomputeList();
+  listeners.forEach((l) => l());
+};
 
 export const threadStore = {
   list(): Thread[] {
-    return Array.from(threads.values()).sort((a, b) => b.createdAt - a.createdAt);
+    return cachedList;
   },
   get(id: string): Thread | undefined {
     return threads.get(id);
