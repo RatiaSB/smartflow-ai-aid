@@ -1,139 +1,129 @@
-# SmartOffice AI SME Assistant
+# SmartOffice AI – SME Assistant
 
-## 🧠 Project Overview
+**Author:** Swatsi Ratia · CAPACITI AI Skill Accelerator Programme
+**Live app:** https://smartflow-ai-aid.lovable.app
 
-In today’s digital economy, organizations are rapidly adopting Artificial Intelligence to improve efficiency, automate repetitive tasks, and enhance decision-making.
-
-The **SmartOffice AI SME Assistant** is an AI-powered productivity platform designed to help non-technical workplace users automate daily administrative tasks such as writing emails, summarizing meetings, planning schedules, and conducting research.
-
-The system demonstrates the practical application of AI, strong prompt engineering, and responsible AI usage in a real-world workplace environment.
-
-This project is developed as part of the **CAPACITI AI Skill Accelerator Programme**.
+> Scan the QR code on the deck (`SmartOffice-AI-SME-Assistant.pptx`) to open the live app on any mobile device during the presentation.
 
 ---
 
-## 🎯 Project Objective
+## 1. Project Overview
 
-The objective of this project is to develop a practical AI solution that improves workplace productivity by automating common tasks.
+**SmartOffice AI SME Assistant** is an AI-powered productivity platform designed
+to help **non-technical workplace staff** automate the repetitive administrative
+tasks that quietly eat up their day — writing emails, summarising meetings,
+planning schedules, doing quick research and answering workplace questions.
 
-The solution:
+The platform is delivered as a modern, responsive SaaS web app with a clean
+enterprise feel, built so it could realistically be sold to small businesses,
+schools, retail teams and municipal offices in South Africa.
 
-- Addresses real-world workplace challenges  
-- Uses AI tools effectively (e.g., ChatGPT / Lovable AI)  
-- Applies strong prompt engineering techniques  
-- Demonstrates ethical and responsible AI usage  
-- Delivers measurable productivity improvements  
+The project demonstrates:
 
----
+- A practical, real-world use of AI in the workplace
+- Strong prompt engineering tuned per task
+- Responsible / ethical AI usage with human-in-the-loop review
+- A measurable productivity uplift for SME teams
 
-## 🚨 Problem Statement
-
-Employees in offices and small businesses spend significant time performing repetitive tasks such as:
-
-- Writing professional emails  
-- Summarizing meeting notes  
-- Planning daily and weekly schedules  
-- Conducting research  
-- Managing communication tasks  
-
-These manual processes reduce efficiency and productivity in modern workplaces.
-
-The **SmartOffice AI SME Assistant** solves this by providing an AI-powered assistant that automates and simplifies these tasks through a single unified platform.
+Built as part of the **CAPACITI AI Skill Accelerator Programme**.
 
 ---
 
-## ⚙️ Features
+## 2. Features
 
-### ✉️ Smart Email Generator
-- Generates professional emails instantly  
-- Supports tone selection (formal, friendly, persuasive)  
-- Adapts messages based on audience (client, manager, team)  
-- Editable AI output before sending  
-
----
-
-### 📝 Meeting Notes Summarizer
-- Converts long meeting notes into structured summaries  
-- Extracts key points, action items, and deadlines  
-- Highlights responsibilities and decisions  
+| # | Tool | What it does |
+|---|------|--------------|
+| 1 | ✉️ **Smart Email Generator** | Drafts professional emails with selectable tone (formal, friendly, persuasive) and audience (client, manager, team). Output is editable Markdown. |
+| 2 | 📝 **Meeting Notes Summarizer** | Turns messy notes into a clean summary with **Key Decisions**, **Action Items (owner + deadline)** and **Deadlines**. |
+| 3 | 📅 **AI Task Planner / Scheduler** | Builds daily or weekly time-blocked plans prioritised Eisenhower-style (do / schedule / delegate / drop). |
+| 4 | 📚 **AI Research Assistant** | Plain-language overview, key insights, recommendations and "things to verify" for any workplace topic. |
+| 5 | 💬 **Workplace Chat Assistant** | Multi-thread conversational AI with streaming responses for ongoing workplace discussions. |
+| 6 | 📱 **Mobile QR Access** | A branded QR code (with embedded logo) is shown on the dashboard, the sidebar and the presentation deck so audiences and staff can scan and open the app on their phones instantly. |
+| 7 | 🛡️ **Responsible-AI Disclaimer** | Every page reminds users: *"AI can make mistakes. Verify important workplace decisions before use."* |
 
 ---
 
-### 📅 AI Task Planner / Scheduler
-- Generates daily and weekly task schedules  
-- Prioritizes tasks based on urgency and importance  
-- Suggests productivity improvements  
+## 3. Tools Used
+
+**Frontend**
+- React 19
+- TanStack Start (routing, SSR, typed server functions)
+- Tailwind CSS v4 with custom enterprise design tokens
+- shadcn/ui component library
+- `qrcode.react` for in-app QR codes
+
+**AI**
+- Lovable AI Gateway (ChatGPT-class models via a single API key)
+- Dedicated system + user prompts per tool
+
+**Tooling & Delivery**
+- Vite 7 build pipeline
+- GitHub for version control
+- Vercel / Cloudflare-ready edge deployment
+- `pptxgenjs` + `qrcode` (Node) for the generated presentation
 
 ---
 
-### 📚 AI Research Assistant
-- Summarizes articles, documents, and reports  
-- Provides key insights and recommendations  
-- Simplifies complex workplace information  
+## 4. Setup Instructions
 
----
+### Prerequisites
+- Node.js 20+ and `bun` (or `npm`/`pnpm`)
+- A Lovable Cloud / Lovable AI Gateway key set as `LOVABLE_API_KEY`
 
-### 💬 AI Workplace Chat Assistant
-- Interactive conversational AI interface  
-- Supports continuous workplace discussions  
-- Assists with writing, planning, and decision support  
-
----
-
-## 🧰 Tools Used
-
-- React.js – Frontend framework  
-- Tailwind CSS – UI styling and responsiveness  
-- ChatGPT – AI content generation  
-- Lovable AI – Rapid UI prototyping  
-- GitHub – Version control and collaboration  
-- Vercel – Deployment platform  
-
----
-
-## 🖥️ UI / UX Design
-
-- Modern SaaS-style dashboard interface  
-- Mobile-first responsive design  
-- Sidebar navigation system  
-- Clean and minimal enterprise-style design  
-- Inspired by:
-  - WeChat Work  
-  - Alibaba productivity systems  
-  - Huawei enterprise dashboards  
-- Smooth animations and card-based layouts  
-
----
-
-## 🚀 Setup Instructions
+### Run the app locally
 
 ```bash
-# 1. Clone the repository
-git clone https://github.com/your-username/smartoffice-ai-sme-assistant.git
-
-# 2. Navigate into the project
+# 1. Clone
+git clone https://github.com/<your-username>/smartoffice-ai-sme-assistant.git
 cd smartoffice-ai-sme-assistant
 
-# 3. Install dependencies
-npm install
+# 2. Install
+bun install      # or: npm install
 
-# 4. Start development server
-npm run dev
+# 3. Environment
+echo "LOVABLE_API_KEY=your-key-here" > .env
 
-# 5. Open in browser
+# 4. Start the dev server
+bun run dev      # or: npm run dev
+
+# 5. Open
 http://localhost:5173
+```
 
+### Build for production
+
+```bash
+bun run build
+bun run start
+```
+
+### Regenerate the presentation deck
+
+The deck (`SmartOffice-AI-SME-Assistant.pptx`) is generated programmatically
+with `pptxgenjs` and includes a live QR code pointing to the deployed app.
+
+```bash
+npm i -g pptxgenjs qrcode
+node scripts/build-deck.js
 ```
 
 ---
 
-## 👨‍💻 Author
+## 5. Responsible AI
 
-### Swatsi Ratia  
-CAPACITI AI Skill Accelerator Programme
+- A persistent disclaimer is shown on every screen.
+- All AI output is **editable** before the user sends, saves or acts on it.
+- Prompts steer the model toward neutral, professional, non-biased language.
+- No chat history is persisted server-side by default.
+- No login is required to try the demo — lowering risk for first-time users.
 
 ---
 
-## 📌 License
+## 6. Author
 
-This project is developed for educational and demonstration purposes.
+**Swatsi Ratia**
+CAPACITI AI Skill Accelerator Programme
+
+## 7. License
+
+Developed for educational and demonstration purposes as part of CAPACITI.
