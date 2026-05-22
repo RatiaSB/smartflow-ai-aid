@@ -10,8 +10,33 @@ import {
   Sun,
   Menu,
   X,
+  
 } from "lucide-react";
 import { useState } from "react";
+
+function WhatsAppIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+      <path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 0 1 8.413 3.488 11.82 11.82 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/>
+    </svg>
+  );
+}
+
+function WeChatIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+      <path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.328.328 0 0 0 .167-.054l1.903-1.114a.864.864 0 0 1 .717-.098 10.16 10.16 0 0 0 2.837.403c.276 0 .55-.012.82-.034a6.617 6.617 0 0 1-.241-1.79c0-3.711 3.604-6.715 8.05-6.715.272 0 .54.014.804.034C17.31 4.32 13.328 2.188 8.691 2.188zM5.785 5.991a1.077 1.077 0 1 1 0 2.154 1.077 1.077 0 0 1 0-2.154zm5.813 0a1.077 1.077 0 1 1 0 2.154 1.077 1.077 0 0 1 0-2.154zM17.5 9.776c-3.866 0-7 2.612-7 5.834 0 1.766.94 3.36 2.42 4.443a.502.502 0 0 1 .18.567l-.33 1.232c-.014.058-.04.116-.04.18a.246.246 0 0 0 .247.246.281.281 0 0 0 .142-.046l1.605-.927a.726.726 0 0 1 .604-.08c.728.21 1.51.327 2.32.327 3.866 0 7-2.612 7-5.834-.001-3.222-3.135-5.842-7.148-5.842zm-2.328 3.137a.86.86 0 1 1 0 1.72.86.86 0 0 1 0-1.72zm4.656 0a.86.86 0 1 1 0 1.72.86.86 0 0 1 0-1.72z"/>
+    </svg>
+  );
+}
+
+function LinkedInIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.063 2.063 0 0 1 2.063-2.065 2.063 2.063 0 0 1 2.063 2.065 2.062 2.062 0 0 1-2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+    </svg>
+  );
+}
 import { cn } from "@/lib/utils";
 import { useTheme } from "@/lib/theme";
 import logo from "@/assets/logo.png";
@@ -115,7 +140,39 @@ export function AppShell({ children }: { children: React.ReactNode }) {
               <span>{theme === "dark" ? "Light mode" : "Dark mode"}</span>
             </button>
             <div className="px-3 pt-3 pb-1 text-[11px] text-muted-foreground leading-relaxed">
-              Built by <span className="text-foreground font-medium">Swatsi Ratia</span> · CAPACITI
+              <div className="flex items-center gap-2 flex-wrap">
+                <span>Built by <span className="text-foreground font-medium">Swatsi Ratia</span></span>
+                <div className="flex items-center gap-1">
+                  <a
+                    href="https://www.linkedin.com/in/ratiasb"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn"
+                    className="inline-flex h-6 w-6 items-center justify-center rounded-md text-muted-foreground hover:text-[#0A66C2] hover:bg-sidebar-accent transition-colors"
+                  >
+                    <LinkedInIcon className="h-3.5 w-3.5" />
+                  </a>
+                  <a
+                    href="https://wa.me/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="WhatsApp"
+                    className="inline-flex h-6 w-6 items-center justify-center rounded-md text-muted-foreground hover:text-[#25D366] hover:bg-sidebar-accent transition-colors"
+                  >
+                    <WhatsAppIcon className="h-3.5 w-3.5" />
+                  </a>
+                  <a
+                    href="https://web.wechat.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="WeChat"
+                    className="inline-flex h-6 w-6 items-center justify-center rounded-md text-muted-foreground hover:text-[#07C160] hover:bg-sidebar-accent transition-colors"
+                  >
+                    <WeChatIcon className="h-3.5 w-3.5" />
+                  </a>
+                </div>
+              </div>
+              <div className="mt-1">CAPACITI</div>
             </div>
           </div>
         </aside>
