@@ -140,7 +140,39 @@ export function AppShell({ children }: { children: React.ReactNode }) {
               <span>{theme === "dark" ? "Light mode" : "Dark mode"}</span>
             </button>
             <div className="px-3 pt-3 pb-1 text-[11px] text-muted-foreground leading-relaxed">
-              Built by <span className="text-foreground font-medium">Swatsi Ratia</span> · CAPACITI
+              <div className="flex items-center gap-2 flex-wrap">
+                <span>Built by <span className="text-foreground font-medium">Swatsi Ratia</span></span>
+                <div className="flex items-center gap-1">
+                  <a
+                    href="https://www.linkedin.com/in/ratiasb"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn"
+                    className="inline-flex h-6 w-6 items-center justify-center rounded-md text-muted-foreground hover:text-[#0A66C2] hover:bg-sidebar-accent transition-colors"
+                  >
+                    <LinkedInIcon className="h-3.5 w-3.5" />
+                  </a>
+                  <a
+                    href="https://wa.me/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="WhatsApp"
+                    className="inline-flex h-6 w-6 items-center justify-center rounded-md text-muted-foreground hover:text-[#25D366] hover:bg-sidebar-accent transition-colors"
+                  >
+                    <WhatsAppIcon className="h-3.5 w-3.5" />
+                  </a>
+                  <a
+                    href="https://web.wechat.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="WeChat"
+                    className="inline-flex h-6 w-6 items-center justify-center rounded-md text-muted-foreground hover:text-[#07C160] hover:bg-sidebar-accent transition-colors"
+                  >
+                    <WeChatIcon className="h-3.5 w-3.5" />
+                  </a>
+                </div>
+              </div>
+              <div className="mt-1">CAPACITI</div>
             </div>
           </div>
         </aside>
