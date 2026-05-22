@@ -10,7 +10,7 @@ import {
   Sun,
   Menu,
   X,
-  Linkedin as LinkedinIcon,
+  
 } from "lucide-react";
 import { useState } from "react";
 
