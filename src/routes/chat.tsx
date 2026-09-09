@@ -2,7 +2,8 @@ import { createFileRoute, Outlet, useNavigate } from "@tanstack/react-router";
 import { useEffect, useSyncExternalStore } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { Plus, MessagesSquare, Trash2 } from "lucide-react";
-import { threadStore } from "@/lib/thread-store";
+import { threadStore, hydrateThreads } from "@/lib/thread-store";
+
 import { cn } from "@/lib/utils";
 import { AiDisclaimer } from "@/components/AiDisclaimer";
 
