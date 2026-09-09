@@ -1,8 +1,8 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useChat } from "@ai-sdk/react";
 import { DefaultChatTransport, type UIMessage } from "ai";
-import { useEffect, useMemo } from "react";
-import { threadStore } from "@/lib/thread-store";
+import { useEffect, useMemo, useState } from "react";
+import { threadStore, hydrateThreads } from "@/lib/thread-store";
 import {
   Conversation,
   ConversationContent,
@@ -20,7 +20,7 @@ import { MessagesSquare } from "lucide-react";
 import logo from "@/assets/logo.png";
 
 export const Route = createFileRoute("/chat/$threadId")({
-  component: ChatThreadPage,
+  component: ChatThreadRoute,
 });
 
 const SUGGESTIONS = [
@@ -30,18 +30,27 @@ const SUGGESTIONS = [
   "Plan my Monday around 6 admin tasks",
 ];
 
-function ChatThreadPage() {
+function ChatThreadRoute() {
   const { threadId } = Route.useParams();
   const navigate = useNavigate();
+  const [ready, setReady] = useState(false);
 
-  // Ensure thread exists (e.g. if user hits the URL fresh, or after refresh).
+  // Restore saved history, then make sure this thread exists.
   useEffect(() => {
+    hydrateThreads();
     if (!threadStore.get(threadId)) {
       const t = threadStore.create();
       navigate({ to: "/chat/$threadId", params: { threadId: t.id }, replace: true });
+      return;
     }
+    setReady(true);
   }, [threadId, navigate]);
 
+  if (!ready) return <div className="h-full" />;
+  return <ChatThreadPage key={threadId} threadId={threadId} />;
+}
+
+function ChatThreadPage({ threadId }: { threadId: string }) {
   const initialMessages = useMemo<UIMessage[]>(
     () => threadStore.get(threadId)?.messages ?? [],
     [threadId],
@@ -57,6 +66,7 @@ function ChatThreadPage() {
     messages: initialMessages,
     transport,
   });
+
 
   // Persist to in-memory thread store + auto title.
   useEffect(() => {

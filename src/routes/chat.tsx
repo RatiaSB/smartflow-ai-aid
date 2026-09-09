@@ -2,7 +2,8 @@ import { createFileRoute, Outlet, useNavigate } from "@tanstack/react-router";
 import { useEffect, useSyncExternalStore } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { Plus, MessagesSquare, Trash2 } from "lucide-react";
-import { threadStore } from "@/lib/thread-store";
+import { threadStore, hydrateThreads } from "@/lib/thread-store";
+
 import { cn } from "@/lib/utils";
 import { AiDisclaimer } from "@/components/AiDisclaimer";
 
@@ -31,12 +32,14 @@ function ChatLayout() {
   const path = useRouterState({ select: (s) => s.location.pathname });
 
   useEffect(() => {
+    hydrateThreads();
     if (path === "/chat") {
       const existing = threadStore.list();
       const target = existing[0] ?? threadStore.create();
       navigate({ to: "/chat/$threadId", params: { threadId: target.id }, replace: true });
     }
   }, [path, navigate]);
+
 
   const newThread = () => {
     const t = threadStore.create();
