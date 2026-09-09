@@ -32,12 +32,14 @@ function ChatLayout() {
   const path = useRouterState({ select: (s) => s.location.pathname });
 
   useEffect(() => {
+    hydrateThreads();
     if (path === "/chat") {
       const existing = threadStore.list();
       const target = existing[0] ?? threadStore.create();
       navigate({ to: "/chat/$threadId", params: { threadId: target.id }, replace: true });
     }
   }, [path, navigate]);
+
 
   const newThread = () => {
     const t = threadStore.create();
